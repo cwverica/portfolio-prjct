@@ -15,3 +15,16 @@ class Blog(models.Model):
 # create a migration
 # migrate
 # add to the admin
+
+    def __str__(self):
+        return self.title
+
+    def summary(self):
+        # body = str(self.body)
+        # summ = body.find('[\.\!\?]')
+        # summ += 1
+        return self.body[:100]
+
+
+    def pretty_tstamp(self):
+        return self.timestamp.strftime('%B %e, %Y')
