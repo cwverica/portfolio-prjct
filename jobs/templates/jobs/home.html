@@ -2,12 +2,13 @@
 <!doctype html>
 <html lang="en">
 <head>
+    {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Casey Verica">
     <meta name="generator" content="Jekyll v4.0.1">
-    <title>Job History, or mystery?</title>
+    <title>Casey Verica</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
@@ -56,9 +57,9 @@
                 <div class="col-sm-4 col-md-1 py-4">
                     <h4 class="text-white">Navigate</h4>
                     <ul class="list-unstyled">
-                        <li><a href="#" class="text-white">Home</a></li>
-                        <li><a href="blog/" class="text-white">Blog</a></li>
-                        <li><a href="#" class="text-white">Resume</a></li>
+                        <li><a href="{% url 'home' %}" class="text-white active">Home</a></li>
+                        <li><a href="{% url 'allblogs' %}" class="text-white">Blog</a></li>
+                        <li><a href="{% static 'Casey Verica Resume.pdf' %}" class="text-white">Resume</a></li>
 
                     </ul>
                 </div>
@@ -91,10 +92,11 @@
     <section class="jumbotron text-center">
         <div class="container">
             <h1>Hi, I'm Casey</h1>
-            <p class="lead text-muted">Well hello there good looking. I see you've come here, to my home(page). This is my first Django website, and not my first python project. I've also take a course in C++ and Visual Basic (albeit many moons ago). I still have Javascript and C# on my list, as well as learning Unreal, and maybe Unity.</p>
+            <p class="lead text-muted">Well hello there good looking. I see you've come here, to my home(page). This is my first Django website, and not my first python project. I've also take courses in C++ and Visual Basic (albeit many moons ago). I still have Javascript and C# on my list, as well as learning Unreal, and maybe Unity.</p>
             <p>
                 <a href="mailto:cwverica@gmail.com" class="btn btn-primary my-2">E-mail me</a>
             </p>
+            <img class="img-fluid" height="300" width="400" src="{% static 'homescreen.jpg' %}">
         </div>
     </section>
 

@@ -2,12 +2,13 @@
 <!doctype html>
 <html lang="en">
 <head>
+    {% load staticfiles %}
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="Casey Verica">
     <meta name="generator" content="Jekyll v4.0.1">
-    <title>Job History, or mystery?</title>
+    <title>My Little Blogspot</title>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
 
@@ -56,9 +57,9 @@
                 <div class="col-sm-4 col-md-1 py-4">
                     <h4 class="text-white">Navigate</h4>
                     <ul class="list-unstyled">
-                        <li><a href="../" class="text-white">Home</a></li>
-                        <li><a href="#" class="text-white">Blog</a></li>
-                        <li><a href="../" class="text-white">Resume</a></li>
+                        <li><a href="{% url 'home' %}" class="text-white">Home</a></li>
+                        <li><a href="{% url 'allblogs' %}" class="text-white active">Blog</a></li>
+                        <li><a href="{% static 'Casey Verica Resume.pdf' %}" class="text-white">Resume</a></li>
 
                     </ul>
                 </div>
@@ -96,7 +97,7 @@
 
 
         {% for post in blogs.all  %}
-        <a href=""></a><h4 class="text-center text-underline">{{ post.title }}</h4><a></a>
+        <a href="{% url 'detail' post.id %}"><h4 class="text-center text-underline">{{ post.title }}</h4></a>
         <p class="text-center">{{ post.pretty_tstamp }}</p><br />
         <img class="img-fluid" height="132" width="200" src="{{ post.image.url }}" /><br /><br />
         <p>{{ post.summary }}</p><br />

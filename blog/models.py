@@ -28,3 +28,6 @@ class Blog(models.Model):
 
     def pretty_tstamp(self):
         return self.timestamp.strftime('%B %e, %Y')
+
+    # def sort_tstamp(self):
+    #     return self.timestamp.strftime('%Y%m%d')
