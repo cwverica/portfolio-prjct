@@ -99,7 +99,9 @@
         {% for post in blogs.all  %}
         <a href="{% url 'detail' post.id %}"><h4 class="text-center text-underline">{{ post.title }}</h4></a>
         <p class="text-center">{{ post.pretty_tstamp }}</p><br />
+        {% if post.image %}
         <img class="img-fluid" height="132" width="200" src="{{ post.image.url }}" /><br /><br />
+        {% endif %}
         <p>{{ post.summary }}</p><br />
         <hr />
 

@@ -93,7 +93,9 @@
 
     <h1 class="text-center text-underline">{{ cur_blog.title }}</h1>
     <p class="text-center">{{ cur_blog.timestamp }}</p>
+    {% if cur_blog.image %}
     <img align="middle" class="img-fluid" width="30%"  src="{{ cur_blog.image.url }}" />
+    {% endif %}
     <br /><br />
     <p>{{ cur_blog.body }}</p><br />
     <hr />

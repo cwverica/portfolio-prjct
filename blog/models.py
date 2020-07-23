@@ -10,7 +10,7 @@ class Blog(models.Model):
     title = models.CharField(max_length=250)
     timestamp = models.DateTimeField()
     body = models.TextField()
-    image = models.ImageField(upload_to='images/blog/')
+    image = models.ImageField(upload_to='images/blog/', blank=True)
 # add blog app to the settings
 # create a migration
 # migrate
